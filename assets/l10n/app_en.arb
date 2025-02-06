@@ -1,0 +1,15 @@
+{
+  "products": "Products",
+  "wishList": "wishList",
+  "home": "Home",
+  "retry": "Retry",
+  "errorMessage": "OOPS! Something went wrong",
+  "noInternetConnectionMessage": "No internet connection",
+  "accessDeniedMessage": "Access Denied, You have insufficient privileges",
+  "noInternetConnection": "No internet connection",
+  "connectionTimeOut": "Connection Time Out!",
+  "price": "Price",
+  "unauthenticatedMessage": "Session is Expired!",
+  "productDetails": "Product Details",
+  "category": "Category"
+}
