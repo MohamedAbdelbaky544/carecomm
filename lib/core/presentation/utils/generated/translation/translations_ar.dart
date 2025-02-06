@@ -44,4 +44,10 @@ class TranslationsAr extends Translations {
 
   @override
   String get category => 'Category';
+
+  @override
+  String get noData => 'no Data';
+
+  @override
+  String get thereIsNoProductInWishList => 'There is no product in WishList';
 }

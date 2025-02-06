@@ -18,16 +18,16 @@ class WishListLocalDataBaseImpl implements WishListLocalDataBase {
 
   @override
   List<ProductModel>? getAllProductInWishList() {
-    return hive.values.toList();
+    return hive.values.toSet().toList();
   }
 
   @override
-  Future<int> addProductToWishList({required ProductModel newTask}) async {
-    return await hive.add(newTask);
+  Future<void> addProductToWishList({required ProductModel newTask}) async {
+    return await hive.put(newTask.id, newTask);
   }
 
   @override
   void deleteFromWhishList({required int index}) {
-    hive.deleteAt(index);
+    hive.delete(index);
   }
 }

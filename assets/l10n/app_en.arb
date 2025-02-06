@@ -11,5 +11,7 @@
   "price": "Price",
   "unauthenticatedMessage": "Session is Expired!",
   "productDetails": "Product Details",
-  "category": "Category"
+  "category": "Category",
+  "noData": "no Data",
+  "thereIsNoProductInWishList": "There is no product in WishList"
 }

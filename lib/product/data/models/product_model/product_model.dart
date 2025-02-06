@@ -35,6 +35,14 @@ class ProductModel {
 
   factory ProductModel.fromJson(Map<String, dynamic> json) =>
       _$ProductModelFromJson(json);
+
+  @override
+  bool operator ==(other) {
+    return (other is ProductModel) && other.id == id;
+  }
+
+  @override
+  int get hashCode => id.hashCode;
 }
 
 extension MapToDomain on ProductModel {

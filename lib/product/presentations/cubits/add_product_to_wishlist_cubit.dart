@@ -10,9 +10,9 @@ class AddProductToWishlistCubit extends Cubit<BaseState<Unit>> {
   final AddProductToWishlistUseCase useCase;
   AddProductToWishlistCubit(this.useCase) : super(const BaseState());
 
-  void addNewProduct({required Product task}) async {
+  void addNewProduct({required Product product}) async {
     emit(state.setInProgressState());
-    final result = await useCase.call(task);
+    final result = await useCase.call(product);
     result.fold(
       (failure) => emit(state.setFailureState(failure)),
       (success) => emit(state.setSuccessState(success)),

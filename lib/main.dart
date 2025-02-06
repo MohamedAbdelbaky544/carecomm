@@ -12,7 +12,7 @@ void main() async {
   await Hive.initFlutter();
   Hive.registerAdapter(ProductModelAdapter());
   Hive.registerAdapter(RatingModelAdapter());
-  await Hive.openBox<ProductModelAdapter>(HiveKeys.wishList);
+  await Hive.openBox<ProductModel>(HiveKeys.wishList);
   await configureInjection(AppEnvironment.dev);
 
   runApp(const App());

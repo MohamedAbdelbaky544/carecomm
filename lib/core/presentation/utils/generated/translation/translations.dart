@@ -172,6 +172,18 @@ abstract class Translations {
   /// In en, this message translates to:
   /// **'Category'**
   String get category;
+
+  /// No description provided for @noData.
+  ///
+  /// In en, this message translates to:
+  /// **'no Data'**
+  String get noData;
+
+  /// No description provided for @thereIsNoProductInWishList.
+  ///
+  /// In en, this message translates to:
+  /// **'There is no product in WishList'**
+  String get thereIsNoProductInWishList;
 }
 
 class _TranslationsDelegate extends LocalizationsDelegate<Translations> {
