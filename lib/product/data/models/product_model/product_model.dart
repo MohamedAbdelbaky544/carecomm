@@ -23,7 +23,7 @@ class ProductModel {
   @HiveField(6)
   final RatingModel? rating;
 
-  ProductModel({
+  const ProductModel({
     required this.id,
     this.title,
     this.price,

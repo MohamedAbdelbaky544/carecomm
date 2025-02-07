@@ -12,7 +12,7 @@ class RatingModel {
   @HiveField(1)
   final int? count;
 
-  RatingModel({
+  const RatingModel({
     this.rate,
     this.count,
   });

@@ -2,7 +2,7 @@ class Rating {
   final double? rate;
   final int? count;
 
-  Rating({
+  const Rating({
     this.rate,
     this.count,
   });

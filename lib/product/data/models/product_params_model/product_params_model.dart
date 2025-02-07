@@ -9,7 +9,7 @@ part 'product_params_model.g.dart';
 class ProductParamsModel {
   final String? category;
 
-  ProductParamsModel(this.category);
+  const ProductParamsModel(this.category);
 
   Map<String, dynamic> toJson() => _$ProductParamsModelToJson(this);
 }

@@ -9,7 +9,7 @@ class Product {
   final String? image;
   final Rating? rating;
 
-  Product({
+  const Product({
     required this.id,
     this.title,
     this.price,
