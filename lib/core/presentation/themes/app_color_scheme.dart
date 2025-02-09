@@ -35,12 +35,17 @@ abstract class AppColorScheme {
 
   Color get successColor => const Color(0xff2E7D32);
 
+  Color get cardBackgroundColor;
+
   Map<StatusColor, Color> get status;
 }
 
 class AppLightColors extends AppColorScheme {
   @override
   Brightness get brightness => Brightness.light;
+
+  @override
+  Color get cardBackgroundColor => const Color(0xffffffff);
 
   @override
   Map<StatusColor, Color> get status => {
@@ -59,6 +64,49 @@ class AppLightColors extends AppColorScheme {
         0xff212121,
         <TextColor, Color>{
           TextColor.white: Colors.white,
+          TextColor.grey: Color(0xffbdbdbd),
+          TextColor.dynamicGrey: Color(0xffE5E5E5),
+          TextColor.darkGrey: Color(0xff626262),
+          TextColor.lightGrey: Color(0xffE5E5E5),
+        },
+      );
+
+  @override
+  MaterialPrimaryColor get primaryColor => MaterialPrimaryColor(
+        0xff1A6E92,
+        <PrimaryColor, Color>{
+          PrimaryColor.tint: const Color(0xff1A6E92).withOpacity(0.1),
+        },
+      );
+}
+
+class AppDarkColors extends AppColorScheme {
+  @override
+  Brightness get brightness => Brightness.dark;
+
+  @override
+  Color get backgroundColor => const Color(0xff101315);
+
+  @override
+  Color get cardBackgroundColor => const Color(0xff202225);
+
+  @override
+  Map<StatusColor, Color> get status => {
+        StatusColor.orange: const Color(0xffEF6C00),
+        StatusColor.blue: const Color(0xff1A6E92),
+        StatusColor.green: Colors.green,
+        StatusColor.red: const Color(0xffB71C1C),
+        StatusColor.orangeTint: const Color(0xffEF6C00).withOpacity(0.1),
+        StatusColor.redTint: const Color(0xffB71C1C).withOpacity(0.1),
+        StatusColor.blueTint: const Color(0xff1A6E92).withOpacity(0.1),
+        StatusColor.greenTint: Colors.green.withOpacity(0.1),
+      };
+
+  @override
+  MaterialTextColor get textColor => const MaterialTextColor(
+        0xffffffff,
+        <TextColor, Color>{
+          TextColor.white: Colors.black,
           TextColor.grey: Color(0xffbdbdbd),
           TextColor.dynamicGrey: Color(0xffE5E5E5),
           TextColor.darkGrey: Color(0xff626262),

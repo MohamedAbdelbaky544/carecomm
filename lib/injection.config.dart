@@ -34,6 +34,7 @@ import 'package:carecomm/product/domain/use_cases/get_product_use_case.dart'
     as _i776;
 import 'package:carecomm/product/presentations/cubits/add_product_to_wishlist_cubit.dart'
     as _i819;
+import 'package:carecomm/product/presentations/cubits/app_cubit.dart' as _i265;
 import 'package:carecomm/product/presentations/cubits/delete_product_from_wish_list_cubit.dart'
     as _i419;
 import 'package:carecomm/product/presentations/cubits/get_all_product_in_wish_list_cubit.dart'
@@ -67,6 +68,7 @@ extension GetItInjectableX on _i174.GetIt {
     final injectableModule = _$InjectableModule();
     gh.lazySingleton<_i361.Dio>(() => injectableModule.dioInstance);
     gh.lazySingleton<_i974.Logger>(() => injectableModule.logger);
+    gh.lazySingleton<_i265.AppCubit>(() => _i265.AppCubit());
     gh.lazySingleton<_i815.Configuration>(
       () => _i318.DevConfiguration(),
       registerFor: {_dev},

@@ -63,7 +63,7 @@ class _BottomNavigationPageState extends State<MainPage> {
         children: [
           SizedBox.expand(
             child: Padding(
-              padding: const EdgeInsets.only(bottom: 88),
+              padding: const EdgeInsets.only(bottom: 60),
               child: widget.child,
             ),
           ),
@@ -87,14 +87,14 @@ class _BottomNavigationBar extends StatelessWidget {
     final Size screenSize = MediaQuery.sizeOf(context);
 
     return Container(
-      height: 88,
+      height: 70,
       width: screenSize.width,
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
         ),
-        color: context.appColor.whiteColor,
+        color: context.appColor.backgroundColor,
         boxShadow: [
           BoxShadow(
             color: context.appColor.blackColor.withOpacity(0.12),

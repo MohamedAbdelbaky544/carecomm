@@ -99,7 +99,7 @@ class _ProductWishListPageState extends State<ProductWishListPage> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
-                                    color: context.appColor.whiteColor,
+                                    color: context.appColor.cardBackgroundColor,
                                   ),
                                   clipBehavior: Clip.antiAlias,
                                   child: Stack(

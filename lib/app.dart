@@ -1,10 +1,14 @@
+import 'package:carecomm/core/presentation/blocs/base_states/base_state.dart';
 import 'package:carecomm/core/presentation/themes/app_theme.dart';
 import 'package:carecomm/core/presentation/utils/generated/translation/translations.dart';
 import 'package:carecomm/core/presentation/utils/routing/route_info.dart';
 import 'package:carecomm/core/presentation/utils/routing/router.dart';
+import 'package:carecomm/injection.dart';
+import 'package:carecomm/product/presentations/cubits/app_cubit.dart';
 import 'package:carecomm/product/presentations/pages/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 class App extends StatelessWidget {
@@ -13,14 +17,26 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.light);
-    return MaterialApp.router(
-      locale: const Locale('en'),
-      debugShowCheckedModeBanner: false,
-      localizationsDelegates: Translations.localizationsDelegates,
-      supportedLocales: Translations.supportedLocales,
-      theme: Theme.of(context).appTheme(Brightness.light).getThemeData(context),
-      themeMode: ThemeMode.light,
-      routerConfig: _goRouterConfig,
+    return BlocProvider(
+      create: (context) => getIt<AppCubit>(),
+      child: BlocBuilder<AppCubit, BaseState>(
+        builder: (context, state) {
+          return MaterialApp.router(
+            locale: const Locale('en'),
+            debugShowCheckedModeBanner: false,
+            localizationsDelegates: Translations.localizationsDelegates,
+            supportedLocales: Translations.supportedLocales,
+            theme: Theme.of(context)
+                .appTheme(Brightness.light)
+                .getThemeData(context),
+            darkTheme: Theme.of(context)
+                .appTheme(Brightness.dark)
+                .getThemeData(context),
+            themeMode: AppCubit.theme,
+            routerConfig: _goRouterConfig,
+          );
+        },
+      ),
     );
   }
 }
